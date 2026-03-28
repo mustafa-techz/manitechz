@@ -16,7 +16,7 @@ const steps = [
 
 export default function Process() {
   return (
-    <section className="py-[120px] bg-white dark:bg-background border-t border-gray-200 dark:border-border overflow-hidden">
+    <section id="process" className="py-[120px] bg-white dark:bg-background border-t border-gray-200 dark:border-border overflow-hidden">
       <div className="max-w-[1280px] mx-auto px-6 flex flex-col lg:flex-row gap-16 items-start">
         
         {/* Left: Numbered Steps */}

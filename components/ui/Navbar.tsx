@@ -15,7 +15,6 @@ export default function Navbar() {
   const navLinks = [
     { name: "About", href: "#about" },
     { name: "Services", href: "#services" },
-    { name: "Portfolio", href: "#portfolio" },
     { name: "Process", href: "#process" },
     { name: "FAQ", href: "#faq" },
   ];
@@ -39,7 +38,7 @@ export default function Navbar() {
       animate={hidden ? "hidden" : "visible"}
       transition={{ duration: 0.35, ease: "easeInOut" }}
       className={clsx(
-        "fixed top-0 left-0 right-0 z-99999 h-[72px] transition-colors duration-300",
+        "fixed top-0 left-0 right-0 z-999999 h-[72px] transition-colors duration-300",
         blur
           ? "bg-white/80 dark:bg-black/60 backdrop-blur-md border-b border-gray-200 dark:border-white/10"
           : "bg-transparent"
@@ -47,7 +46,7 @@ export default function Navbar() {
     >
       <div className="max-w-[1280px] mx-auto px-6 h-full flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="text-2xl font-bold tracking-tighter flex items-center gap-1 moirai-one-regular">
+        <Link href="#home" className="text-2xl font-bold tracking-tighter flex items-center gap-1 moirai-one-regular">
           <span className="bg-gradient-to-r from-black to-black/70 dark:from-white dark:to-white/70 bg-clip-text text-transparent">
             ManiTech
           </span>

@@ -35,7 +35,7 @@
 
 .moirai-one-regular {
   font-family: var(--font-moirai), system-ui;
-  font-weight: 400;
+  font-weight: 900;
   font-style: normal;
 }
 
@@ -44,7 +44,9 @@ html {
 }
 
 /* Fix for AnimatedHeading spacing issues */
-h1 span, h2 span, h3 span {
+h1 span,
+h2 span,
+h3 span {
   white-space: pre-wrap !important;
 }
 
