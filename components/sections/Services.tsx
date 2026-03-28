@@ -10,12 +10,14 @@ const services = [
     lottie:
       "https://lottie.host/2e5d4f12-d385-4e4d-8e69-b752b78c7ead/qTO5HH75rj.lottie",
     items: ["Custom Websites", "Web Applications", "SaaS Platforms"],
+    delay: 0.1,
   },
   {
     title: "Design",
     lottie:
       "https://lottie.host/f99e6544-7d0b-4630-a29e-8456c43de514/VsKlLd4L9K.lottie",
     items: ["UI/UX Design", "Product Design", "Design Systems"],
+    delay: 0.2,
   },
   {
     title: "Optimization",
@@ -26,6 +28,7 @@ const services = [
       "Performance Optimization",
       "Website Maintenance",
     ],
+    delay: 0.3,
   },
 ];
 

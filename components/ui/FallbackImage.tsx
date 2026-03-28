@@ -9,6 +9,7 @@ interface Props {
     width: number;
     height: number;
     className?: string;
+    title?: string;
 }
 
 export default function FallbackImage({
@@ -17,6 +18,7 @@ export default function FallbackImage({
     width,
     height,
     className,
+    title,
 }: Props) {
 
     const fallbackSrc = "/icons/default-tech.svg"; // your MTZ icon
@@ -34,6 +36,7 @@ export default function FallbackImage({
             width={width}
             height={height}
             className={className}
+            title={title}
             onError={() => {
                 setImgSrc(fallbackSrc);
             }}
