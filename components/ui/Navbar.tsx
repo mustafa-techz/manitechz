@@ -39,7 +39,7 @@ export default function Navbar() {
       animate={hidden ? "hidden" : "visible"}
       transition={{ duration: 0.35, ease: "easeInOut" }}
       className={clsx(
-        "fixed top-0 left-0 right-0 z-50 h-[72px] transition-colors duration-300",
+        "fixed top-0 left-0 right-0 z-99999 h-[72px] transition-colors duration-300",
         blur
           ? "bg-white/80 dark:bg-black/60 backdrop-blur-md border-b border-gray-200 dark:border-white/10"
           : "bg-transparent"
@@ -57,15 +57,15 @@ export default function Navbar() {
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-500 dark:text-muted">
           {navLinks.map((link) => (
-            <Link 
-              key={link.name} 
-              href={link.href} 
+            <Link
+              key={link.name}
+              href={link.href}
               className="hover:text-black dark:hover:text-white transition-colors"
             >
               {link.name}
             </Link>
           ))}
-          
+
           <ThemeToggle />
 
           <Link

@@ -27,13 +27,13 @@ function LinkedinIcon(props: any) {
 
 export default function Footer() {
   return (
-    <footer className="bg-white dark:bg-black pt-20 pb-10 border-t border-gray-200 dark:border-border">
+    <footer className="bg-white dark:bg-black pt-20 pb-10 border-t border-gray-200 dark:border-border z-99999 relative">
       <div className="max-w-[1280px] mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 mb-16">
-          
+
           <div className="col-span-2 lg:col-span-2">
             <Link href="/" className="text-2xl font-bold tracking-tighter mb-6 inline-block moirai-one-regular">
-              <span className="bg-gradient-to-r from-black to-black/70 dark:from-white dark:to-white/70 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-black to-black/70 dark:from-white dark:to-white/70 bg-clip-text text-transparent">
                 ManiTech
               </span>
               <span className="text-accent">Z</span>
@@ -76,7 +76,7 @@ export default function Footer() {
           <p className="text-gray-500 dark:text-muted text-sm text-center md:text-left">
             © 2026 <span className="moirai-one-regular">ManiTechZ</span>. All rights reserved.
           </p>
-          
+
           <div className="flex gap-4">
             <Link href="#" className="w-10 h-10 rounded-full bg-gray-50 dark:bg-[#111] border border-gray-200 dark:border-border flex items-center justify-center text-gray-500 dark:text-muted hover:text-black dark:hover:text-white hover:border-gray-300 dark:hover:border-white/20 transition-all">
               <GithubIcon />
