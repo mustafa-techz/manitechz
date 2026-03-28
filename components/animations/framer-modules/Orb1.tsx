@@ -245,7 +245,7 @@ export default function Nova(props: NovaProps) {
         const hoverIntensityLocation = gl.getUniformLocation(program, "hoverIntensity");
 
         function resize() {
-          if (!container) return;
+          if (!container || !gl) return;
           const dpr = window.devicePixelRatio || 1;
           const width = container.clientWidth;
           const height = container.clientHeight;
