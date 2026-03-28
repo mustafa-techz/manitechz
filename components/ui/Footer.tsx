@@ -27,7 +27,7 @@ function LinkedinIcon(props: any) {
 
 export default function Footer() {
   return (
-    <footer className="bg-white dark:bg-black pt-20 pb-10 border-t border-gray-200 dark:border-border z-99999 relative">
+    <footer id="contact" className="bg-white dark:bg-black pt-20 pb-10 border-t border-gray-200 dark:border-border z-99999 relative">
       <div className="max-w-[1280px] mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 mb-16">
 
