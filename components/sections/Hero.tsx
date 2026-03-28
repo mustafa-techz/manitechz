@@ -18,14 +18,15 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <span className="text-accent font-medium tracking-[0.12em] uppercase text-xs md:text-sm mb-4 block">
-              Manifest Technology. Zero Limits.
-            </span>
+
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[72px] font-bold leading-[1.1] tracking-tight text-black dark:text-white mb-6">
               <span className="moirai-one-regular font-normal">ManiTech<span className="text-accent">Z</span></span>
               <br />
               <span className="text-gray-400 dark:text-muted/50">Solutions</span>
             </h1>
+            <span className="text-accent font-medium tracking-[0.12em] uppercase text-xs md:text-sm mb-4 block">
+              Manifest Technology. Zero Limits.
+            </span>
           </motion.div>
 
           <motion.p
@@ -44,16 +45,8 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mt-4"
           >
-            <AnimatedButton text="Let's Connect">
-              <button className="px-8 py-4 rounded-full bg-black text-white dark:bg-white dark:text-black font-semibold transition-colors shadow-lg shadow-black/5 dark:shadow-white/5">
-                Let&apos;s Connect
-              </button>
-            </AnimatedButton>
-            <AnimatedButton text="View Our Work">
-              <button className="px-8 py-4 rounded-full border border-gray-300 dark:border-border text-black dark:text-white font-medium hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
-                View Our Work
-              </button>
-            </AnimatedButton>
+            <AnimatedButton text="Let's Connect" variant="secondary" />
+            <AnimatedButton text="View Our Work" variant="primary" />
           </motion.div>
         </div>
 
@@ -71,7 +64,7 @@ export default function Hero() {
               autoplay
               className="w-full h-full relative z-10"
             />
-            
+
             {/* Ambient Background Glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-accent/20 rounded-full blur-[120px] animate-pulse pointer-events-none" />
           </div>

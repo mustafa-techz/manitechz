@@ -18,6 +18,9 @@ interface IconSlideButtonProps {
   style?: React.CSSProperties;
   className?: string;
   title?: string; // Standard HTML title prop sometimes used as buttonTitle
+  borderColor?: string;
+  borderHoverColor?: string;
+  showFill?: boolean;
 }
 
 export default function IconSlideButton(props: IconSlideButtonProps) {
@@ -30,40 +33,48 @@ export default function IconSlideButton(props: IconSlideButtonProps) {
     textHoverColor = "rgb(255, 255, 255)",
     iconColor = "currentColor",
     iconHoverFill = "rgb(255, 255, 255)",
+    borderColor = "transparent",
+    borderHoverColor = borderColor,
     fontSize = 16,
     buttonRadius = "999px",
     style,
     className,
+    showFill = true,
   } = props;
 
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <motion.div
-      className={`relative flex items-center justify-center cursor-pointer overflow-hidden px-8 py-3 ${className || ""}`}
+      className={`relative flex items-center justify-center cursor-pointer overflow-hidden px-8 py-4 border ${className || ""}`}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
+      animate={{
+        backgroundColor: isHovered ? bGHoverColor : bGColor,
+        borderColor: isHovered ? borderHoverColor : borderColor,
+      }}
       style={{
-        backgroundColor: bGColor,
         borderRadius: buttonRadius,
         ...style,
       }}
     >
       {/* Background Fill Animation */}
-      <motion.div
-        className="absolute inset-0 z-0"
-        initial={{ scaleX: 0, originX: 0 }}
-        animate={{ scaleX: isHovered ? 1 : 0 }}
-        transition={{ duration: 0.4, ease: [0.44, 0, 0.56, 1] }}
-        style={{ backgroundColor: fillColor }}
-      />
+      {showFill && (
+        <motion.div
+          className="absolute inset-0 z-0"
+          initial={{ scaleX: 0, originX: 0 }}
+          animate={{ scaleX: isHovered ? 1 : 0 }}
+          transition={{ duration: 0.4, ease: [0.44, 0, 0.56, 1] }}
+          style={{ backgroundColor: fillColor }}
+        />
+      )}
 
       {/* Button Text */}
       <motion.span
         className="relative z-10 font-medium whitespace-nowrap"
-        animate={{ 
+        animate={{
           color: isHovered ? textHoverColor : textColor,
-          x: isHovered ? -10 : 0 
+          x: isHovered ? -5 : 0
         }}
         transition={{ duration: 0.4, ease: [0.44, 0, 0.56, 1] }}
         style={{ fontSize: `${fontSize}px` }}
@@ -74,14 +85,13 @@ export default function IconSlideButton(props: IconSlideButtonProps) {
       {/* Icon Animation */}
       <motion.div
         className="relative z-10 ml-2"
-        initial={{ x: 20, opacity: 0 }}
-        animate={{ 
-          x: isHovered ? 0 : 20, 
-          opacity: isHovered ? 1 : 0 
+        initial={{ x: 0, opacity: 1 }}
+        animate={{
+          x: isHovered ? 5 : 0,
         }}
         transition={{ duration: 0.4, ease: [0.44, 0, 0.56, 1] }}
       >
-        <ArrowForward fill={isHovered ? iconHoverFill : iconColor} />
+        <ArrowForward fill={isHovered ? (isHovered && textHoverColor !== textColor ? iconHoverFill : iconColor) : iconColor} />
       </motion.div>
     </motion.div>
   );
